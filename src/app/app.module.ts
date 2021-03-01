@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
 import { FormsComponent } from './forms/forms.component';
+import { TabbednavComponent } from './tabbednav/tabbednav.component';
+import { LoginformComponent } from './loginform/loginform.component';
 
 @NgModule({
   declarations: [
@@ -24,10 +27,13 @@ import { FormsComponent } from './forms/forms.component';
     BasicFormComponent,
     NestedFormComponent,
     ValidFormComponent,
-    FormsComponent
+    FormsComponent,
+    TabbednavComponent,
+    LoginformComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,

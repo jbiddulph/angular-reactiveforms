@@ -1,0 +1,16 @@
+<h1>Reactive Forms</h1>
+
+<nav>
+  <button mat-raised-button color="primary" (click)="toggleEditor('basic')">Basic Form</button>
+  <button mat-raised-button color="primary" (click)="toggleEditor('nested')">Nested Form</button>
+  <button mat-raised-button color="primary" (click)="toggleEditor('array')">Array Form</button>
+  <button mat-raised-button color="primary" (click)="toggleEditor('valid')">Valid Editor</button>
+</nav>
+
+<app-basic-form *ngIf="showBasicForm"></app-basic-form>
+
+<nested-form *ngIf="showNestedForm"></nested-form>
+
+<app-array-form *ngIf="showArrayForm"></app-array-form>
+
+<app-valid-form *ngIf="showValidForm"></app-valid-form>
