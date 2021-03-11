@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup } from '@angular/forms'
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoginserviceService } from '../loginservice.service';
 import { first } from 'rxjs/operators';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-loginform',
@@ -20,10 +22,11 @@ export class LoginformComponent implements OnInit {
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private authenticationService: LoginserviceService
-  ) { 
+    private authenticationService: LoginserviceService,
+    private snackBar: MatSnackBar
+  ) {
     // redirect to home if already logged in
-    if (this.authenticationService.currentUserValue) { 
+    if (this.authenticationService.currentUserValue) {
       this.router.navigate(['/']);
   }
   }
@@ -59,6 +62,9 @@ export class LoginformComponent implements OnInit {
                 },
                 error => {
                     this.error = error;
+                    this.snackBar.open(error.message, null, {
+                      duration: 3000
+                    })
                     this.loading = false;
                 });
   }

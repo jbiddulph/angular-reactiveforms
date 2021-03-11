@@ -16,6 +16,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsComponent } from './forms/forms.component';
 import { TabbednavComponent } from './tabbednav/tabbednav.component';
 import { LoginformComponent } from './loginform/loginform.component';
@@ -41,7 +42,8 @@ import { LoginformComponent } from './loginform/loginform.component';
     MatSelectModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatChipsModule
+    MatChipsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
