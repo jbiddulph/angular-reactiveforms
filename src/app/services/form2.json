@@ -1,0 +1,13 @@
+[
+  {
+    "key": "Input",
+    "type": "select",
+    "templateOptions": {
+      "label": "Form 2",
+      "options": [
+        { "value": "option1", "label": "option1" },
+        { "value": "option2", "label": "option2" }
+      ]
+    }
+  }
+]

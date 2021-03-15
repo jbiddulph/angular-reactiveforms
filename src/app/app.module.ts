@@ -20,6 +20,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsComponent } from './forms/forms.component';
 import { TabbednavComponent } from './tabbednav/tabbednav.component';
 import { LoginformComponent } from './loginform/loginform.component';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyMaterialModule } from '@ngx-formly/material';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { LoginformComponent } from './loginform/loginform.component';
     MatButtonModule,
     MatCheckboxModule,
     MatChipsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    FormlyModule.forRoot({ extras: { lazyRender: true } }),
+    FormlyMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

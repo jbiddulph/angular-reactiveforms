@@ -1,0 +1,9 @@
+[
+  {
+  "key": "Input",
+  "type": "input",
+  "templateOptions": {
+      "label": "Form 1"
+    }
+  }
+]

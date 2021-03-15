@@ -2,9 +2,10 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
+    "resolveJsonModule": true,
     "outDir": "../out-tsc/e2e",
     "module": "commonjs",
-    "target": "es2018",
+    "target": "es2019",
     "types": [
       "jasmine",
       "node"
