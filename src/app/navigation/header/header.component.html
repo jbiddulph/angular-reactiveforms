@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <div fxHide.gt-xs>
+      <button (click)="onToggleSidenav()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <div><h1><a routerLink="/">LookWhatFound.Me</a></h1></div>
+    <div fxFlex fxLayout fxLayoutAlign="end"></div>
+    <div fxHide.xs>
+    <ul class="top-nav">
+      <li><a mat-button routerLink="/basic" routerLinkActive="active">Basic</a></li>
+      <li><a mat-button routerLink="/nested" routerLinkActive="active">Nested</a></li>
+      <li><a mat-button routerLink="/array" routerLinkActive="active">Array</a></li>
+      <li><a mat-button routerLink="/valid" routerLinkActive="active">Valid</a></li>
+      <li><a mat-button routerLink="/login" routerLinkActive="active">Login</a></li>
+      <li><a mat-button routerLink="/tabbednav" routerLinkActive="active">Tabbednav</a></li>
+    </ul>
+    </div>
+  </mat-toolbar-row>
+
+  <!-- <mat-toolbar-row>
+      <span style="font-size: 12px;">SimpleCRM helps you easily manage your contacts</span>
+    </mat-toolbar-row> -->
+</mat-toolbar>

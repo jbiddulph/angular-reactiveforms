@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { ArrayFormComponent } from './array-form/array-form.component';
 import { BasicFormComponent } from './basic-form/basic-form.component';
 import { NestedFormComponent } from './nested-form/nested-form.component';
@@ -22,6 +23,13 @@ import { TabbednavComponent } from './tabbednav/tabbednav.component';
 import { LoginformComponent } from './loginform/loginform.component';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormlyMaterialModule } from '@ngx-formly/material';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule}  from '@angular/material/list';
+import { HeaderComponent } from './navigation/header/header.component';
+import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
+
 
 @NgModule({
   declarations: [
@@ -32,13 +40,16 @@ import { FormlyMaterialModule } from '@ngx-formly/material';
     ValidFormComponent,
     FormsComponent,
     TabbednavComponent,
-    LoginformComponent
+    LoginformComponent,
+    HeaderComponent,
+    SidenavListComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FlexLayoutModule,
     ReactiveFormsModule,
     MatInputModule,
     MatSelectModule,
@@ -46,6 +57,10 @@ import { FormlyMaterialModule } from '@ngx-formly/material';
     MatCheckboxModule,
     MatChipsModule,
     MatSnackBarModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule,
     FormlyModule.forRoot({ extras: { lazyRender: true } }),
     FormlyMaterialModule
   ],

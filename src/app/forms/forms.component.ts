@@ -17,13 +17,15 @@ export class FormsComponent implements OnInit {
   model: any = {};
   options: FormlyFormOptions = {};
   fields: FormlyFieldConfig[] = [];
+  sidenav: false;
   constructor( private testFormsService: TestformsService) {}
   ngOnInit() {
     this.form1Structure = this.testFormsService.getForm1JSON();
-    this.form2Structure = this.testFormsService.getForm2JSON();
+    //this.form2Structure = this.testFormsService.getForm2JSON();
     console.log('Form 1: ',this.form1Structure);
     console.log('Form 2: ',this.form2Structure);
   }
+
   loadForm1() {
     this.form = new FormGroup({});
     this.model = {};
