@@ -29,6 +29,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule}  from '@angular/material/list';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
     TabbednavComponent,
     LoginformComponent,
     HeaderComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
