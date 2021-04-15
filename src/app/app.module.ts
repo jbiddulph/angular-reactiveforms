@@ -30,6 +30,8 @@ import { MatListModule}  from '@angular/material/list';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { RegisterComponent } from './register/register.component';
+import { MatCardModule } from '@angular/material/card';
+import { FindsAllComponent } from './finds-all/finds-all.component';
 
 
 @NgModule({
@@ -44,7 +46,8 @@ import { RegisterComponent } from './register/register.component';
     LoginformComponent,
     HeaderComponent,
     SidenavListComponent,
-    RegisterComponent
+    RegisterComponent,
+    FindsAllComponent
   ],
   imports: [
     BrowserModule,
@@ -63,6 +66,8 @@ import { RegisterComponent } from './register/register.component';
     MatIconModule,
     MatSidenavModule,
     MatListModule,
+    MatCardModule,
+    MatCardModule,
     FormlyModule.forRoot({ extras: { lazyRender: true } }),
     FormlyMaterialModule
   ],

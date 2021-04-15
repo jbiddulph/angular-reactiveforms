@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class LoginserviceService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
+  public userName;
+
 
   constructor(
     private http: HttpClient,
@@ -36,10 +38,9 @@ export class LoginserviceService {
   }
 
   getProfile(): Observable<any> {
-
     const currentUser = localStorage.getItem('currentUser');
     const token = JSON.parse(currentUser).token;
-
+    this.userName = JSON.parse(currentUser).name;
     const httpHeaders = {
       headers: new HttpHeaders({
         'content-type': 'application/json',

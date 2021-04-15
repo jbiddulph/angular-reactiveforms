@@ -7,6 +7,8 @@ import { NestedFormComponent } from './nested-form/nested-form.component';
 import { RegisterComponent } from './register/register.component';
 import { TabbednavComponent } from './tabbednav/tabbednav.component';
 import { ValidFormComponent } from './valid-form/valid-form.component';
+import { UserGuard } from './guards/user.guard';
+import { FindsAllComponent } from './finds-all/finds-all.component';
 
 const routes: Routes = [
   { path: 'basic', component: BasicFormComponent },
@@ -14,6 +16,7 @@ const routes: Routes = [
   { path: 'array', component: ArrayFormComponent },
   { path: 'valid', component: ValidFormComponent },
   { path: 'tabbednav', component: TabbednavComponent },
+  { path: 'findsall', component: FindsAllComponent, canActivate: [UserGuard]  },
   { path: 'login', component: LoginformComponent },
   { path: 'register', component: RegisterComponent },
 ];

@@ -5,10 +5,7 @@
   <mat-sidenav-content>
     <div style="height: 100vh;">
       <app-header (SidenavToggle)="sidenav.toggle()"></app-header>
-      <app-forms></app-forms>
-      <button (click)="getUser()">get user</button>
-      {{message}}
-      <h2>Logged in user: {{title}} ({{userid}})</h2>
+      <h2>Logged in user: {{userName}} ({{userId}})</h2>
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>

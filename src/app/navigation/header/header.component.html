@@ -9,17 +9,23 @@
     <div fxFlex fxLayout fxLayoutAlign="end"></div>
     <div fxHide.xs>
     <ul class="top-nav">
-      <li><a mat-button routerLink="/basic" routerLinkActive="active">Basic</a></li>
-      <li><a mat-button routerLink="/nested" routerLinkActive="active">Nested</a></li>
-      <li><a mat-button routerLink="/array" routerLinkActive="active">Array</a></li>
-      <li><a mat-button routerLink="/valid" routerLinkActive="active">Valid</a></li>
-      <li><a mat-button routerLink="/login" routerLinkActive="active">Login</a></li>
-      <li><a mat-button routerLink="/register" routerLinkActive="active">Register</a></li>
-      <li><a mat-button routerLink="/tabbednav" routerLinkActive="active">Tabbednav</a></li>
+      <li>
+        <div *ngIf="isUserLoggedIn; else isLogOut">
+          <a mat-button class="nav-link" routerLink="/logout">Logout</a>
+      </div>
+
+      <ng-template #isLogOut>
+        <a mat-button routerLink="/login">Login</a>
+      </ng-template>
+
+      </li>
+
+      <li><a mat-button routerLink="/register">Register</a></li>
+      <li><a mat-button routerLink="/tabbednav">Tabbednav</a></li>
+      <li><a mat-button routerLink="/findsall">All Finds</a></li>
     </ul>
     </div>
   </mat-toolbar-row>
-
   <!-- <mat-toolbar-row>
       <span style="font-size: 12px;">SimpleCRM helps you easily manage your contacts</span>
     </mat-toolbar-row> -->

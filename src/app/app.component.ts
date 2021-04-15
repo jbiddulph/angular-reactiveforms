@@ -1,16 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { LoginserviceService } from './services/loginservice.service';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  message = 'you are not logged in';
+export class AppComponent implements OnInit, OnDestroy {
+  destroy$: Subject<boolean> = new Subject<boolean>();
   title = '';
-  userid = '';
-  user: any;
+  userName = '';
+  userId = '';
+
+
 
   constructor(
     private authenticationService: LoginserviceService,
@@ -18,18 +22,22 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.user = this.authenticationService.getProfile();
-    if(!this.user){
+    setTimeout(()=>{                           //<<<---using ()=> syntax
       this.getUser();
-    }
+    }, 1000);
   }
 
-  getUser(){
-    return this.user.subscribe(userprofile => {
-      console.log('here', userprofile);
-      this.title = userprofile.name;
-      this.userid = userprofile.id;
-      this.message = 'you are now logged in';
+  getUser() {
+    this.authenticationService.getProfile()
+    .pipe(takeUntil(this.destroy$))
+    .subscribe(User => {
+      this.userName = User.name;
+      this.userId = User.id;
     });
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next(true);
+    this.destroy$.unsubscribe();
   }
 }

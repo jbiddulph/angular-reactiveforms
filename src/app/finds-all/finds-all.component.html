@@ -1,0 +1,41 @@
+<div class="container custom-container-2">
+
+  <!-- Show it when there is no employee -->
+  <div class="no-data text-center" *ngIf="Finds.length == 0">
+    <p>There is no employee added yet!</p>
+    <button class="btn btn-outline-primary" routerLink="/create-employee">Add Empoyee</button>
+  </div>
+
+  <!-- Employees list table, it hides when there is no employee -->
+  <div *ngIf="Finds.length !== 0">
+    <h3 class="mb-3 text-center">Employees List</h3>
+
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let find of Finds">
+            <td>{{find.id}}</td>
+            <td>{{find.title}}</td>
+            <td>{{find.description}}</td>
+            <td>{{find.primary_art}}</td>
+            <td>
+              <span class="edit" routerLink="/api/allartworks/{{find.id}}">Edit</span>
+              <span class="delete" (click)="deleteFind(find.id)">Delete</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
