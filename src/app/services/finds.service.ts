@@ -36,7 +36,7 @@ export class FindsService {
 
   // HttpClient API get() method => Fetch employee
   getFind(id): Observable<Find> {
-    return this.http.get<Find>(this.apiURL + '/api/allartworks/' + id)
+    return this.http.get<Find>(this.apiURL + '/api/allartworks/' + id, this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)
@@ -54,7 +54,7 @@ export class FindsService {
 
   // HttpClient API put() method => Update Find
   updateFind(id, find): Observable<Find> {
-    return this.http.put<Find>(this.apiURL + '/api/allartworks/' + id, JSON.stringify(find), this.httpOptions)
+    return this.http.put<Find>(this.apiURL + `/api/allartworks/$id`, JSON.stringify(find), this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)

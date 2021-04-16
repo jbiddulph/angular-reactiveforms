@@ -9,6 +9,7 @@ import { TabbednavComponent } from './tabbednav/tabbednav.component';
 import { ValidFormComponent } from './valid-form/valid-form.component';
 import { UserGuard } from './guards/user.guard';
 import { FindsAllComponent } from './finds-all/finds-all.component';
+import { FindEditComponent } from './finds-all/edit/find-edit/find-edit.component';
 
 const routes: Routes = [
   { path: 'basic', component: BasicFormComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'valid', component: ValidFormComponent },
   { path: 'tabbednav', component: TabbednavComponent },
   { path: 'findsall', component: FindsAllComponent, canActivate: [UserGuard]  },
+  { path: 'findsall/edit/:id', component: FindEditComponent, canActivate: [UserGuard]  },
   { path: 'login', component: LoginformComponent },
   { path: 'register', component: RegisterComponent },
 ];

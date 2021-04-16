@@ -11,7 +11,7 @@ import { BasicFormComponent } from './basic-form/basic-form.component';
 import { NestedFormComponent } from './nested-form/nested-form.component';
 import { ValidFormComponent } from './valid-form/valid-form.component';
 
-import { ReactiveFormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
@@ -32,6 +32,7 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
 import { RegisterComponent } from './register/register.component';
 import { MatCardModule } from '@angular/material/card';
 import { FindsAllComponent } from './finds-all/finds-all.component';
+import { FindEditComponent } from './finds-all/edit/find-edit/find-edit.component';
 
 
 @NgModule({
@@ -47,9 +48,11 @@ import { FindsAllComponent } from './finds-all/finds-all.component';
     HeaderComponent,
     SidenavListComponent,
     RegisterComponent,
-    FindsAllComponent
+    FindsAllComponent,
+    FindEditComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
