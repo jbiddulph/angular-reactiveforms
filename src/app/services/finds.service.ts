@@ -54,7 +54,7 @@ export class FindsService {
 
   // HttpClient API put() method => Update Find
   updateFind(id, find): Observable<Find> {
-    return this.http.put<Find>(this.apiURL + `/api/allartworks/$id`, JSON.stringify(find), this.httpOptions)
+    return this.http.put<Find>(this.apiURL + '/api/allartworks/' + id, JSON.stringify(find), this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)
